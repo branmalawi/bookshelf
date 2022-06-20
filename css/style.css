@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-color: #e5eef0;
+}
+
+.banner {
+  width: 100%;
+  height: 250px;
+  background-image: url('../asset/banner/banner.jpg');
+  background-size: cover;
+}
+
+main {
+  display: flex;
+}
+
+.session1 {
+  width: 30%;
+}
+
+.session2 {
+  width: 70%;
+  padding: 10px;
+  display: flex;
+}
+
+.control,
+.user {
+  width: 95%;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 0 rgba(62, 62, 62, 0.3);
+  padding: 20px;
+}
+
+.user {
+  margin: -40px 0 0 20px;
+}
+
+.control {
+  margin: 20px 0 0 20px;
+}
+
+.user>img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  transform: translatey(-70%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #f9f9f9;
+}
+
+.user>h1 {
+  text-align: center;
+  margin: -50px 0 10px 0;
+  color: #366bd2;
+  font-size: 1.6em;
+}
+
+
+.user>p {
+  text-align: center;
+  color: #b9b9b9;
+  font-size: .9em;
+}
+
+.control>h2 {
+  text-align: center;
+}
+
+.control>p {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  color: #5e91ec;
+}
+
+.btn-control {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.btn-control figcaption {
+  width: 50px;
+  text-align: center;
+  font-size: .8em;
+}
+
+.btn-control div {
+  transition: .3s;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-control div:hover,
+.btn-list div:hover {
+  box-shadow: 0 0 4px .5px rgba(34, 34, 34, 0.845);
+  transition: .3s;
+}
+
+.btn-control img {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%) sepia(95%) saturate(0%) hue-rotate(130deg) brightness(105%) contrast(105%);
+}
+
+.ganti-nama {
+  background: rgb(240, 188, 75);
+  background: linear-gradient(0deg, rgba(240, 188, 75, 1) 0%, rgba(221, 95, 143, 1) 100%);
+}
+
+.cari {
+  background: rgb(27, 242, 169);
+  background: linear-gradient(0deg, rgba(27, 242, 169, 1) 0%, rgba(95, 174, 221, 1) 100%);
+}
+
+.tambah {
+  background: rgb(192, 85, 210);
+  background: linear-gradient(0deg, rgba(192, 85, 210, 1) 0%, rgba(103, 154, 237, 1) 97%);
+}
+
+
+.animasi {
+  transform: rotate(360deg);
+  transition: .3s;
+}
+
+
+#search,
+#change-name {
+  background-color: #eaecec;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 3px 0 rgba(62, 62, 62, 0.3);
+}
+
+#change-name {
+  display: none;
+}
+
+#search {
+  display: none;
+}
+
+#search img {
+  width: 20px;
+  height: 20px;
+  margin: 0 3px;
+  filter: invert(25%) sepia(5%) saturate(135%) hue-rotate(19deg) brightness(94%) contrast(84%);
+}
+
+#search input,
+#change-name input {
+  flex-grow: 1;
+  min-width: 0;
+  margin: 5px 0;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  color: #484848f3;
+  font-weight: 600;
+}
+
+#change-name input {
+  padding: 10px;
+}
+
+#search input:focus,
+#change-name input:focus {
+  outline: none;
+}
+
+#search button,
+#change-name button {
+  height: 30px;
+  width: 50px;
+  border: none;
+  background-color: #366bd2;
+  color: white;
+  font-weight: bold;
+}
+
+#search .delete {
+  width: 10px;
+  height: 10px;
+  margin-right: 7px;
+  display: none;
+}
+
+#add,
+.edit-data-book {
+  background-color: #eaecec;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0 rgba(62, 62, 62, 0.3);
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+#add {
+  width: 100%;
+  display: none;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+#add input,
+.edit-data-book input {
+  width: 100%;
+  height: 35px;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1.5px solid #366bd2;
+  background-color: white;
+  font-size: 1em;
+}
+
+#add input:focus,
+.edit-data-book input:focus {
+  outline: none;
+  box-shadow: 0 0 4px 0 rgba(62, 62, 62, 0.3);
+}
+
+#add button,
+.edit-data-book button {
+  height: 30px;
+  background-color: #366bd2;
+  border-radius: 5px;
+  border: none;
+  width: 60px;
+  color: white;
+}
+
+#change-name button:focus,
+#search button:focus,
+#add button:focus,
+.edit-data-book button:focus {
+  box-shadow: 0 0 3px .7px rgba(0, 0, 0, .5);
+}
+
+.container {
+  width: 50%;
+}
+
+.container>h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.list {
+  width: 95%;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 0 rgba(62, 62, 62, 0.3);
+  padding: 10px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+}
+
+.about {
+  margin-left: 12px;
+}
+
+.img-book {
+  width: 80px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.list p {
+  line-height: 1.5em;
+}
+
+.title {
+  color: #366bd2;
+}
+
+.author {
+  font-size: .9em;
+  color: #979c9d;
+}
+
+.tgl {
+  font-size: .9em;
+}
+
+.btn-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100px;
+  width: 120px;
+}
+
+
+.check,
+.remove,
+.edit {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+}
+
+.remove {
+  background-image: url('../asset/list/remove.png');
+  background-size: cover;
+}
+
+.edit {
+  background-image: url('../asset/list/edit.png');
+  background-size: cover;
+}
+
+#sudah .check {
+  background-image: url('../asset/list/read.png');
+  background-size: cover;
+}
+
+#belum .check {
+  background-image: url('../asset/list/unread.png');
+  background-size: cover;
+}
+
+#sudah .img-book {
+  background-image: url('../asset/cover/read.jpg');
+  background-size: cover;
+}
+
+#belum .img-book {
+  background-image: url('../asset/cover/unread.jpg');
+  background-size: cover;
+}
+
+.pop-up {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.edit-data-book {
+  position: relative;
+  display: flex;
+  width: 400px;
+}
+
+.edit-data-book h3 {
+  display: inline-block;
+  width: 100%;
+}
+
+.edit-data-book .close {
+  width: 25px;
+  height: 25px;
+  background-color: lightblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(45%, -45%);
+  border-radius: 50%;
+  padding: 5px;
+  filter: invert(100%) sepia(95%) saturate(0%) hue-rotate(130deg) brightness(105%) contrast(105%);
+}
+
+.show-all {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #e1e9fd;
+  box-shadow: 0 0 4px .4px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  right: 10vw;
+  top: 225px;
+}
+
+.show-all img {
+  width: 30px;
+  height: 30px;
+}
+
+.show {
+  display: flex;
+}
+
+@media (max-width: 1010px) and (min-width: 720px) {
+  .session1 {
+    width: 35%;
+  }
+
+  .session2 {
+    width: 65%;
+    flex-wrap: wrap;
+  }
+
+  .user>h1 {
+    font-size: 1.5em;
+  }
+
+  .user>p {
+    font-size: .8em;
+  }
+
+  .control h2 {
+    font-size: 1.2em;
+  }
+
+  .control p {
+    font-size: 1.6em;
+  }
+
+  .btn-control div {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-control img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-control figcaption {
+    width: 40px;
+    font-size: .6em;
+  }
+
+  #search {
+    width: 100%;
+    height: 20px;
+  }
+
+  #search img {
+    width: 15px;
+    height: 15px;
+    margin: 0 3px;
+  }
+
+  #search input {
+    margin: 3px 0;
+    height: 17px;
+    font-size: .6em;
+  }
+
+  #search button {
+    height: 100%;
+    width: 33px;
+    font-weight: 400;
+    font-size: .6em;
+  }
+
+  #search .delete {
+    width: 7px;
+    height: 7px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .edit-data-book {
+    height: 300px;
+  }
+
+}
+
+@media (max-width: 720px) {
+  .banner {
+    height: 200px;
+  }
+
+  main {
+    flex-wrap: wrap;
+  }
+
+  .session1,
+  .session2 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .session1 {
+    flex-wrap: wrap;
+  }
+
+  .session2 {
+    display: block;
+    margin-top: 15px;
+  }
+
+  .user {
+    width: 95%;
+    margin: -50px auto 0;
+    padding: 10px;
+  }
+
+  .control {
+    width: 95%;
+    margin: 10px auto 0;
+  }
+
+  .user>img {
+    transform: translatey(-60%);
+  }
+
+  .btn-control>img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .edit-data-book {
+    width: 250px;
+  }
+  .show-all {
+    right: 20px;
+    top: 80vh;
+  }
+}

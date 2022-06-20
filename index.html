@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css" title="" type="" />
+  <link rel="icon" href="asset/list/read.png" title="" type="" />
+  <title>BookShelf</title>
+</head>
+
+<body>
+  <header>
+    <div class="banner"></div>
+  </header>
+  <main>
+    <div class="session1">
+      <div class="user">
+        <img src="asset/user.jpg" alt="" />
+        <h1>hello, <span id="name"></span></h1>
+        <p>
+          kelola buku kesukaan anda dengan lebih mudah di sini, coba sekarang
+        </p>
+      </div>
+      <div class="control">
+        <h2>jumlah buku</h2>
+        <p>
+          0
+        </p>
+        <div class="btn-control">
+          <figure>
+            <div class="ganti-nama">
+              <img src="asset/icon/change.svg" alt="" />
+            </div>
+            <figcaption>nama</figcaption>
+          </figure>
+          <figure>
+            <div class="cari">
+              <img src="asset/icon/search.svg" alt="" />
+            </div>
+            <figcaption>cari </figcaption>
+          </figure>
+          <figure>
+            <div class="tambah">
+              <img src="asset/icon/add.svg" alt="" />
+            </div>
+            <figcaption>tambah</figcaption>
+          </figure>
+        </div>
+        <form id="change-name">
+          <input type="text" name="" id="" value="" placeholder="masukkan nama baru" />
+          <button type="submit">ganti</button>
+        </form>
+        <form id="search">
+          <img src="asset/icon/search.svg" alt="" />
+          <input type="text" name="" id="srch" value="" placeholder="masukkan judul lengkap" required />
+          <img src="asset/icon/cancel.svg" alt="" class="delete">
+          <button type="submit">search</button>
+        </form>
+        <form id="add">
+          <input type="text" name="" id="title" placeholder="judul buku" required>
+          <input type="text" name="" id="author" placeholder="nama penulis" required>
+          <input type="date" name="" id="publish" placeholder="tahun terbit" maxlength="4" required>
+          <button>tambah</button>
+        </form>
+      </div>
+    </div>
+    <div class="session2">
+      <div class="container">
+        <h3>belum dibaca</h3>
+        <div id="belum"></div>
+      </div>
+      <div class="container">
+        <h3>sudah di baca</h3>
+        <div id="sudah"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="pop-up">
+    <form class="edit-data-book">
+      <h3>edit buku</h3>
+      <input type="text" name="" id="title-edit" placeholder="judul buku" required>
+      <input type="text" name="" id="author-edit" placeholder="nama penulis" required>
+      <input type="date" name="" id="publish-edit" placeholder="tahun terbit" maxlength="4" required>
+      <button>ganti</button>
+      <img src="asset/icon/cancel.svg" alt="" class="close">
+    </form>
+  </div>
+
+  <div class="show-all">
+    <img src="asset/icon/show-all.svg" alt="" />
+  </div>
+
+  <script type="text/javascript" src="js/animate.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
