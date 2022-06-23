@@ -404,7 +404,7 @@ main {
   align-items: center;
   background-color: #e1e9fd;
   box-shadow: 0 0 4px .4px rgba(0, 0, 0, 0.6);
-  position: fixed;
+  position: absolute;
   right: 10vw;
   top: 225px;
 }
@@ -523,5 +523,6 @@ main {
   .show-all {
     right: 20px;
     top: 80vh;
+    position: fixed;
   }
 }
