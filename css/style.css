@@ -466,11 +466,6 @@ main {
   .edit-data-book {
     height: 300px;
   }
-  .show-all {
-    right: 20px;
-    top: 80vh;
-    position: absolute;
-  }
 
 }
 
