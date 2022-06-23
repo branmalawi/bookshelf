@@ -469,7 +469,7 @@ main {
   .show-all {
     right: 20px;
     top: 80vh;
-    position: fixed;
+    position: absolute;
   }
 
 }
