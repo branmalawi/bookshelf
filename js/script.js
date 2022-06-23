@@ -20,12 +20,18 @@ function isStorageAble() {
 }
 
 function isSearch() {
-  const searchValue = formSearch.children[1].value;
+  const searchValue = search.value;
   if (searchValue == "") {
     return false;
   }
   return true;
 }
+
+search.addEventListener("input", function() {
+  document.dispatchEvent(new Event(renderPage));
+});
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   checkName();
@@ -43,10 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
     const newName = formName.children[0].value;
     newUserName(newName);
-  });
-  formSearch.addEventListener('submit', function (event) {
-    event.preventDefault();
-    document.dispatchEvent(new Event(renderPage));
   });
 });
 
@@ -109,9 +111,9 @@ document.addEventListener(renderPage, function () {
   numOfBook.innerText = book.length;
 
   if (isSearch()) {
-    const searchValue = formSearch.children[1].value.toLowerCase();
+    const searchValue = search.value.toLowerCase();
     for (const bookSearch of book) {
-      if (searchValue == bookSearch.title) {
+      if (bookSearch.title.startsWith(searchValue)) {
         const bookElementSearch = makeListBook(bookSearch);
         if (!bookSearch.isComplate) {
           unreadBookList.append(bookElementSearch);
@@ -120,12 +122,11 @@ document.addEventListener(renderPage, function () {
         }
       }
     }
-showAll.classList.toggle("show");
-    inputs.forEach(input => input.value = "");
+    showAll.classList.add("show");
     saveDataBook();
     return;
   }
-
+  showAll.classList.remove("show");
   for (const bookItem of book) {
     const bookElement = makeListBook(bookItem);
     if (!bookItem.isComplate) {
@@ -152,14 +153,17 @@ function makeListBook(dataBuku) {
 
   const aboutList = document.createElement("div");
   aboutList.classList.add("about");
-  aboutList.append(judul, penulis, terbit);
+  aboutList.append(judul,
+    penulis,
+    terbit);
 
   const imgBook = document.createElement("div");
   imgBook.classList.add("img-book");
 
   const bookList = document.createElement("div");
   bookList.classList.add("book");
-  bookList.append(imgBook, aboutList);
+  bookList.append(imgBook,
+    aboutList);
 
   const btnListCheck = document.createElement("div");
   btnListCheck.classList.add("check");
@@ -170,31 +174,38 @@ function makeListBook(dataBuku) {
 
   const btnList = document.createElement("div");
   btnList.classList.add("btn-list");
-  btnList.append(btnListCheck, btnListEdit, btnListRemove);
+  btnList.append(btnListCheck,
+    btnListEdit,
+    btnListRemove);
 
   const list = document.createElement("div");
   list.classList.add("list");
-  list.append(bookList, btnList);
-  list.setAttribute("id", dataBuku.id);
+  list.append(bookList,
+    btnList);
+  list.setAttribute("id",
+    dataBuku.id);
 
 
-  btnListCheck.addEventListener("click", function () {
-    moveShelves(dataBuku.id);
-  });
+  btnListCheck.addEventListener("click",
+    function () {
+      moveShelves(dataBuku.id);
+    });
 
-  btnListEdit.addEventListener("click", function () {
-    popUp.classList.toggle("show");
-    formEdit.setAttribute("id", dataBuku.id)
-  });
+  btnListEdit.addEventListener("click",
+    function () {
+      popUp.classList.toggle("show");
+      formEdit.setAttribute("id", dataBuku.id)
+    });
 
-  btnListRemove.addEventListener("click", function () {
-    const check = confirm("kamu yakin mau di hapus bukunya?")
-    if (check) {
-      removeListBook(dataBuku.id);
-    } else {
-      return
-    }
-  });
+  btnListRemove.addEventListener("click",
+    function () {
+      const check = confirm("kamu yakin mau di hapus bukunya?")
+      if (check) {
+        removeListBook(dataBuku.id);
+      } else {
+        return
+      }
+    });
   return list;
 }
 
@@ -203,7 +214,8 @@ close.addEventListener("click", function () {
 })
 
 showAll.addEventListener("click", function() {
-  showAll.classList.toggle("show");
+  showAll.classList.remove("show");
+  search.value = "";
   document.dispatchEvent(new Event(renderPage));
 });
 
